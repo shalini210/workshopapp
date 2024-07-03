@@ -1,0 +1,26 @@
+ul
+{
+    list-style: none;
+    display: flex;
+    
+    height:80px;
+    background-color: #98aa07;
+    align-items: center;
+}
+li
+{
+    color:white;
+    width:150px;
+    box-sizing: border-box;
+    height: 78px;
+    text-align: center;
+    font-size:15px;
+    padding-top:31.5px;
+    /* background-color: royalblue; */
+}
+li:hover
+{
+    background-color: white;
+    color: #98aa07;
+
+}
