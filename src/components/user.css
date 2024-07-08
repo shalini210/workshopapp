@@ -10,3 +10,9 @@
     width: 100px;
     border:2px solid black;
 }
+.usercontainer
+{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
