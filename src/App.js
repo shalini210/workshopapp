@@ -1,20 +1,25 @@
+import { useState } from 'react';
+import Allusers from './components/Allusers';
+import Calc from './components/Calc';
+import Home from './components/Home';
+import Login from './components/Login';
+import Usingref from './components/Usingref';
 import logo from './logo.svg';
 
-import Menu from './components/Menu'
-import First from './First';
-import Footer from './components/Footer';
-import User from './components/User';
-import Allusers from './components/Allusers';
-import Usingevent from './components/Usingevent';
-import Counter from './components/Counter';
+
 function App() {
+    const[flag,setflag]=useState("");
   return (
     <>
-    {/* <Usingevent></Usingevent> */}
-    <Menu></Menu>
-    <Counter></Counter>
-    {/* <Allusers></Allusers> */}
-    <Footer></Footer>
+    <Allusers></Allusers>
+    <h1>use REf example</h1>
+    <Usingref></Usingref>
+    <hr></hr>
+    <Calc></Calc>
+    {flag}
+  <div>
+    {flag!=""?<Home s={setflag}></Home>:<Login s={setflag}></Login>}
+  </div>
     </>
   );
 }
