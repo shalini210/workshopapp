@@ -1,17 +1,18 @@
 import User from "./User"
 
 import boy1 from "../images/boy1.png"
-import { useRef } from "react";
+import { useRef,useState } from "react";
 export default function Allusers() {
 
+  const [usersdata,setuserdata]=useState();
   let namer = useRef();
   let imgr = useRef();
   let desigr= useRef();
   let contactr= useRef();
-    const users = [
+    const [users,setusers] = useState([
         {name:'Ron',uimg:boy1,desig:"Software Developer",
          contact:"982749234"},        
-    ];
+    ]);
     const adduser = ()=>
     {
       //create a json object of form data
@@ -20,18 +21,25 @@ let u = {name:namer.current.value,
   uimg:imgr.current.value,
   desig:desigr.current.value,
   contact:contactr.current.value}
-      users.push(u)
+      // users.push(u)
+      let t = users;
+      t.push(u);
+      setusers(t);
       console.log(users)
-      // usersdata();
+      setuserdata(showusers())
       // then call usersdata
     }
-    let usersdata = users.map((u)=>
+    let showusers=()=>
     {
-        return <User uname={u.name}
-         ipath = {u.uimg} 
-         ud={u.desig}
-          uc={u.contact}></User>
-    })
+        let usersdata1 = users.map((u)=>
+        {
+            return <User uname={u.name}
+            ipath = {u.uimg} 
+            ud={u.desig}
+              uc={u.contact}></User>
+        })
+         return usersdata1;
+    }
   return (
     <>
     <div>Allusers</div>
